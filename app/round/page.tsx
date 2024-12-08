@@ -1,9 +1,10 @@
-import { Game } from "./_components/Game";
+import { Game, PredictionResult } from "./_components/Game";
+import { Team } from "./_components/GameTeam";
 
 export default function Page() {
 
 
-  const derbyGames = [
+  const derbyGames: { homeTeam: Team, awayTeam: Team, savedPrediction?: PredictionResult, predictionResult?: PredictionResult }[] = [
     {
       homeTeam: {
         name: "Bears",
@@ -16,7 +17,9 @@ export default function Page() {
         primaryColor: "#203731",
         secondaryColor: "#FFB612",
         image: "https://static.www.nfl.com/q_auto,f_auto,dpr_2.0/league/api/clubs/logos/GB"
-      }
+      },
+      savedPrediction: "home",
+      predictionResult: "home"
     },
     {
       homeTeam: {
@@ -30,7 +33,9 @@ export default function Page() {
         primaryColor: "#004C54",
         secondaryColor: "#A5ACAF",
         image: "https://static.www.nfl.com/q_auto,f_auto,dpr_2.0/league/api/clubs/logos/PHI"
-      }
+      },
+      savedPrediction: "away",
+      predictionResult: "home"
     },
     {
       homeTeam: {
@@ -125,7 +130,7 @@ export default function Page() {
 
       <div className="flex flex-col gap-3">
         {derbyGames.map((game, index) => (
-          <Game key={index} homeTeam={game.homeTeam} awayTeam={game.awayTeam} />
+          <Game key={index} homeTeam={game.homeTeam} awayTeam={game.awayTeam} predictionResult={game.predictionResult} savedPrediction={game.savedPrediction} />
         ))}
       </div>
     </main>

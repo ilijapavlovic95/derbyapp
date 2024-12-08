@@ -17,6 +17,12 @@ const config: Config = {
           500: '#0070F3',
           600: '#2F6FEB',
         },
+        primary: '#000B58',
+        secondary: '#006A67',
+        tertiary: '#FFF4B7',
+        success: '#27ae60',
+        warning: '#f1c40f',
+        danger: '#e74c3c'
       },
     },
     keyframes: {

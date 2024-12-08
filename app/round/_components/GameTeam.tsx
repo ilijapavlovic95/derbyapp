@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { isNumberObject } from "util/types";
 
 export type Team = {
   name: string;
@@ -10,10 +11,12 @@ export type Team = {
 type Props = Team & {
   alignedRight?: boolean;
   highlighted?: boolean;
-  onTeamSelect: () => void;
+  disabled?: boolean;
+  score?: number;
+  onTeamSelect: () => void
 }
 
-export const GameTeam = ({ name, primaryColor, secondaryColor, image, alignedRight, highlighted, onTeamSelect }: Props) => {
+export const GameTeam = ({ name, primaryColor, secondaryColor, image, alignedRight, highlighted, disabled, onTeamSelect }: Props) => {
 
   const styleColors = {
     backgroundColor: primaryColor,
@@ -26,7 +29,8 @@ export const GameTeam = ({ name, primaryColor, secondaryColor, image, alignedRig
     {name}
 
 
-    {!highlighted && <button className="absolute top-0 left-0 w-full h-full bg-white/50" onClick={onTeamSelect}></button>}
+    {!highlighted && <button className="absolute top-0 left-0 w-full h-full bg-white/50" disabled={disabled} onClick={onTeamSelect}></button>}
+
   </div>;
 
 };
