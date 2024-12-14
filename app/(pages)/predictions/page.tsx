@@ -144,7 +144,6 @@ const derbyGames: {
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
-      CLICK THE TEAMS TO PREDICT THE WINNER
       <div className="flex flex-col gap-3">
         {derbyGames.map((game, index) => (
           <Game
