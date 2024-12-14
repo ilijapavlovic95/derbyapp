@@ -22,7 +22,7 @@ const config: Config = {
         tertiary: '#FFF4B7',
         success: '#27ae60',
         warning: '#f1c40f',
-        danger: '#e74c3c'
+        danger: '#e74c3c',
       },
     },
     keyframes: {
