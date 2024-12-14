@@ -1,9 +1,8 @@
 'use client';
 
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import { LibCard } from './ui/card';
-import { LibHeading } from './ui/heading';
 import Link from 'next/link';
+import { LibCard } from './lib/card';
 
 const HomeNavigationItem = ({
   path,
@@ -14,8 +13,8 @@ const HomeNavigationItem = ({
 }) => {
   return (
     <Link href={path}>
-      <LibCard>
-        <LibHeading level={3}>{label}</LibHeading>
+      <LibCard clickable>
+        <h1>{label}</h1>
         <ArrowRightIcon className="h-6 w-6" />
       </LibCard>
     </Link>

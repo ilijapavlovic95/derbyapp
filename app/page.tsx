@@ -1,7 +1,4 @@
-import { HomeNavigation } from '@/components/Navigation';
-import { LibCard } from '@/components/ui/card';
-import { LibHeading } from '@/components/ui/heading';
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import { HomeNavigation } from '@/components/HomeNavigation';
 
 export default function Page() {
   return (

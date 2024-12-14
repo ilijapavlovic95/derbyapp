@@ -6,7 +6,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
       <body>
         <div className="flex h-screen w-screen justify-center">
           <div className="w-full md:w-3/5">{children}</div>
