@@ -4,6 +4,7 @@ import { Provider } from '@/components/ui/provider';
 import { PredictionTeam } from './_components/PredictionTeam';
 import { Prediction, PredictionStatusEnum } from './_components/Prediction';
 import { PredictionTeamType } from './_components/PredictionCard';
+import { AddPrediction } from './_components/AddPrediction';
 
 const mockTeams: PredictionTeamType[] = [
   {
@@ -25,11 +26,14 @@ const mockTeams: PredictionTeamType[] = [
 export const ManagePredictions = () => {
   return (
     <Provider>
-      <Prediction
-        teams={mockTeams}
-        date="2024-12-23T15:00:00.000Z"
-        status={PredictionStatusEnum.OPEN}
-      />
+      <div className="flex flex-col gap-3">
+        <AddPrediction />
+        <Prediction
+          teams={mockTeams}
+          date="2024-12-23T15:00:00.000Z"
+          status={PredictionStatusEnum.OPEN}
+        />
+      </div>
     </Provider>
   );
 };
